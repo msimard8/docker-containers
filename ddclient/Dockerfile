@@ -35,8 +35,8 @@ RUN \
   tar -xvf ddclient-3.8.2.tar.bz2 && \
   cd ddclient-3.8.2 
 
-RUN chmod +x /home/patch.sh && \
-RUN /home/patch.sh && 
+RUN chmod +x /home/patch.sh
+RUN /home/patch.sh 
 
 RUN \
   cp ddclient /usr/sbin/ && \
