@@ -40,7 +40,7 @@ RUN \
   cd ddclient-3.8.2 
 
 
-
+RUN ls
 RUN cp ddclient /usr/sbin/ 
 
 RUN chmod +x /home/patch.sh
