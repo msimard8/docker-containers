@@ -21,7 +21,11 @@ CMD ["/sbin/my_init"]
 # Disable SSH
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
+RUN mkdir /root/ddclient-patch
+
 ADD patch.sh /home/patch.sh
+ADD ddclient.patch /root/ddclient-patch/ddclient.patch
+
 
 # Install ddclient
 RUN \
