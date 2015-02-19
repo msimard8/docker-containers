@@ -50,7 +50,7 @@ RUN \
   mkdir /etc/ddclient && \
   mkdir /var/cache/ddclient && \
   cp ddclient-3.8.2/sample-etc_rc.d_init.d_ddclient.ubuntu /etc/init.d/ddclient && \
-  update-rc.d ddclient-3.8.2/ddclient defaults && \
+  update-rc.d ddclient defaults && \
   mv ddclient-3.8.2/sample-etc_ddclient.conf /etc/ddclient.conf-sample && \
   ln -s /config/ddclient.conf /etc/ddclient.conf
 
