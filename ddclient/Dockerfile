@@ -33,9 +33,12 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   wget "http://downloads.sourceforge.net/project/ddclient/ddclient/ddclient-3.8.2/ddclient-3.8.2.tar.bz2?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fddclient%2F&ts=1408222484&use_mirror=softlayer-dal" -O ddclient-3.8.2.tar.bz2 && \
   tar -xvf ddclient-3.8.2.tar.bz2 && \
-  cd ddclient-3.8.2 && \
-  chmod +x /home/patch.sh && \
-  /home/patch.sh && \
+  cd ddclient-3.8.2 && 
+
+RUN chmod +x /home/patch.sh && \
+RUN /home/patch.sh && 
+
+RUN \
   cp ddclient /usr/sbin/ && \
   mkdir /etc/ddclient && \
   mkdir /var/cache/ddclient && \
