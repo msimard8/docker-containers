@@ -55,7 +55,7 @@ RUN \
   ln -s /config/ddclient.conf /etc/ddclient.conf
 
 RUN cat ddclient-3.8.2/ddclient
-RUN cat /usr/bin/ddclient
+RUN cat /usr/sbin/ddclient
 
 #Add required Dependencies for FreeDNS
 RUN cpanm --sudo Digest::SHA1
