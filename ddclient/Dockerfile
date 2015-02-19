@@ -21,6 +21,8 @@ CMD ["/sbin/my_init"]
 # Disable SSH
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
+ADD patch.sh /patch.sh
+
 # Install ddclient
 RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
@@ -32,6 +34,7 @@ RUN \
   wget "http://downloads.sourceforge.net/project/ddclient/ddclient/ddclient-3.8.2/ddclient-3.8.2.tar.bz2?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fddclient%2F&ts=1408222484&use_mirror=softlayer-dal" -O ddclient-3.8.2.tar.bz2 && \
   tar -xvf ddclient-3.8.2.tar.bz2 && \
   cd ddclient-3.8.2 && \
+  /patch.sh && \
   cp ddclient /usr/sbin/ && \
   mkdir /etc/ddclient && \
   mkdir /var/cache/ddclient && \
