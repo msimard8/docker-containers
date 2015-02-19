@@ -12,5 +12,5 @@ patch -b -p0 -i ddclient.patch
 
 cp /root/ddclient-patch/ddclient /usr/sbin/
 
-rm /var/cache/ddclient/ddclient.cache
+
 
