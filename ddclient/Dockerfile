@@ -50,9 +50,12 @@ RUN \
   mkdir /etc/ddclient && \
   mkdir /var/cache/ddclient && \
   cp ddclient-3.8.2/sample-etc_rc.d_init.d_ddclient.ubuntu /etc/init.d/ddclient && \
-  update-rc.d ddclient defaults && \
+  update-rc.d ddclient-3.8.2/ddclient defaults && \
   mv ddclient-3.8.2/sample-etc_ddclient.conf /etc/ddclient.conf-sample && \
   ln -s /config/ddclient.conf /etc/ddclient.conf
+
+RUN cat ddclient-3.8.2/ddclient
+RUN cat /usr/bin/ddclient
 
 #Add required Dependencies for FreeDNS
 RUN cpanm --sudo Digest::SHA1
